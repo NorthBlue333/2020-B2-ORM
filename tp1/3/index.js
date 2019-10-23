@@ -14,7 +14,7 @@ exports = module.exports = {
     for(i = 1; i < input.length; i++) {
       for(l = 0; l < input[i].length; l++) {
         if(input[i][l] == '*') {
-          bonus += [i, l];
+          bonus.push([i, l]);
         } else if (input[i][l] == 'o') {
           coins.push([i, l]);
         }
@@ -52,7 +52,7 @@ exports = module.exports = {
       final += 'x'
       current_pos = pos;
     });
-
+    
     return final;
 
     // AND HERE
