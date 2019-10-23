@@ -11,9 +11,8 @@ exports = module.exports = {
         coins = [],
         bonus = [],
         final = '';
-    console.log(input)
     for(i = 1; i < input.length; i++) {
-      for(l = 0; l < input[i].length - 1; l++) {
+      for(l = 0; l < input[i].length; l++) {
         if(input[i][l] == '*') {
           bonus += [i, l];
         } else if (input[i][l] == 'o') {
@@ -34,9 +33,28 @@ exports = module.exports = {
       } else if (y < 0) {
         final += '^'.repeat(-y);
       }
-      console.log(pos)
-      console.log(final)
+      final += 'x'
+      current_pos = pos;
     });
+    bonus.forEach(function(pos) {
+      y = pos[0] - current_pos[0];
+      x = pos[1] - current_pos[1];
+      if(x > 0) {
+        final += '>'.repeat(x);
+      } else if (x < 0) {
+        final += '<'.repeat(-x);
+      }
+      if(y > 0) {
+        final += 'v'.repeat(y);
+      } else if (y < 0) {
+        final += '^'.repeat(-y);
+      }
+      final += 'x'
+      current_pos = pos;
+    });
+
+    return final;
+
     // AND HERE
   },
   verify: function (dataset, output) {
