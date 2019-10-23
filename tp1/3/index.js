@@ -24,14 +24,14 @@ exports = module.exports = {
       y = pos[0] - current_pos[0];
       x = pos[1] - current_pos[1];
       if(x > 0) {
-        final += '>'.repeat(x);
+        final += '>'.repeat(x-1);
       } else if (x < 0) {
-        final += '<'.repeat(-x);
+        final += '<'.repeat(-x-1);
       }
       if(y > 0) {
-        final += 'v'.repeat(y);
+        final += 'v'.repeat(y-1);
       } else if (y < 0) {
-        final += '^'.repeat(-y);
+        final += '^'.repeat(-y-1);
       }
       final += 'x'
       current_pos = pos;
@@ -40,19 +40,20 @@ exports = module.exports = {
       y = pos[0] - current_pos[0];
       x = pos[1] - current_pos[1];
       if(x > 0) {
-        final += '>'.repeat(x);
+        final += '>'.repeat(x-1);
       } else if (x < 0) {
-        final += '<'.repeat(-x);
+        final += '<'.repeat(-x-1);
       }
       if(y > 0) {
-        final += 'v'.repeat(y);
+        final += 'v'.repeat(y-1);
       } else if (y < 0) {
-        final += '^'.repeat(-y);
+        final += '^'.repeat(-y-1);
       }
       final += 'x'
       current_pos = pos;
     });
-    
+    console.log(input)
+    console.log(final)
     return final;
 
     // AND HERE
