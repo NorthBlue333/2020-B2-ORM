@@ -11,7 +11,8 @@ exports = module.exports = {
         coins = [],
         bonus = [],
         final = '';
-    for(i = 1; i < input.length; i++) {
+    input.shift()
+    for(i = 0; i < input.length; i++) {
       for(l = 0; l < input[i].length; l++) {
         if(input[i][l] == '*') {
           bonus.push([i, l]);
@@ -21,7 +22,6 @@ exports = module.exports = {
       }
     }
     coins.forEach(function(pos) {
-      console.l
       y = pos[0] - current_pos[0];
       x = pos[1] - current_pos[1];
       if(x > 0) {
