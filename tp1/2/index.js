@@ -7,7 +7,17 @@ exports = module.exports = {
   datasets,
   algo: function (input) {
     // YOUR CODE BETWEEN HERE
-
+    let ways = 1,
+        current_weight = 0;
+    for(let i = 1; i < input.length; i++) {
+      if(current_weight + input[i] <= 100) {
+        current_weight += input[i];
+      } else {
+        current_weight = input[i];
+        ways += 1;
+      }
+    }
+    return ways;
     // AND HERE
   },
   verify: function (dataset, output) {
