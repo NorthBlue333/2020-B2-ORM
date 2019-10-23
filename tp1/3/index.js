@@ -21,17 +21,18 @@ exports = module.exports = {
       }
     }
     coins.forEach(function(pos) {
+      console.l
       y = pos[0] - current_pos[0];
       x = pos[1] - current_pos[1];
       if(x > 0) {
-        final += '>'.repeat(x-1);
+        final += '>'.repeat(x);
       } else if (x < 0) {
-        final += '<'.repeat(-x-1);
+        final += '<'.repeat(-x);
       }
       if(y > 0) {
-        final += 'v'.repeat(y-1);
+        final += 'v'.repeat(y);
       } else if (y < 0) {
-        final += '^'.repeat(-y-1);
+        final += '^'.repeat(-y);
       }
       final += 'x'
       current_pos = pos;
@@ -40,14 +41,14 @@ exports = module.exports = {
       y = pos[0] - current_pos[0];
       x = pos[1] - current_pos[1];
       if(x > 0) {
-        final += '>'.repeat(x-1);
+        final += '>'.repeat(x);
       } else if (x < 0) {
-        final += '<'.repeat(-x-1);
+        final += '<'.repeat(-x);
       }
       if(y > 0) {
-        final += 'v'.repeat(y-1);
+        final += 'v'.repeat(y);
       } else if (y < 0) {
-        final += '^'.repeat(-y-1);
+        final += '^'.repeat(-y);
       }
       final += 'x'
       current_pos = pos;
